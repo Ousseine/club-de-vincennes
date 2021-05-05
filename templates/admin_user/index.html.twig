@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom d' utilisateur</th>
+                <th>Adresse e-mail</th>
+                <th>Roles</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr class="table-success">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>
+                    <button class="btn btn-secondary btn-sm">
+                        <a href="{{ path('admin_user_show', {'id': user.id})}}">voir</a>
+                    </button>
+                    <button class="btn btn-warning btn-sm">
+                        <a href="{{ path('admin_user_edit', {'id': user.id}) }}">Modifier</a>
+                    </button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Oups ! il n'y a aucun utilisateur</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button class="btn btn-info btn-lg"><a href="{{ path('admin_user_new') }}">Ajouter un utilisateur</a></button>
+{% endblock %}

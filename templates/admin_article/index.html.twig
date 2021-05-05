@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+    <div class="contain article">
+        {% for article in articles %}
+            <div class="title">
+                <h4>{{ article.title }}</h4>
+            </div>
+            <div class="img">
+                <h4>Image ou vidéo associé</h4>
+                <img src="{{ asset('uploads/' ~ article.file) }}" width="100" alt="fichier de l' article">
+            </div>
+            <div class="content">
+                <h4>contenu de l' article</h4>
+                {{ article.content }}
+            </div>
+            <div class="create">
+                <h4>Date de création</h4>
+                {{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}
+            </div>
+            <button class="btn btn-secondary">
+                <a href="{{ path('admin_article_show', {'id': article.id}) }}">Voir</a>
+            </button>
+            <button class="btn btn-warning">
+                <a href="{{ path('admin_article_edit', {'id': article.id})}}">Modifier</a>
+            </button>
+            <button class="btn btn-info">
+                <a href="{{ path('admin_article_new') }}">Ajouter un article</a>
+            </button>
+        {% endfor %}
+    </div>
+{% endblock %}

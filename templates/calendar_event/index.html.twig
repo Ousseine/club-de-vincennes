@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/calendar.css') }}" />
+{% endblock %}
+
+{% block title %}Agenda / Horaires{% endblock %}
+
+{% block body %}
+
+    <h1>Agenda / Horaires</h1>
+    <div id="calendar"></div>
+
+{% endblock %}
+
+{% block js %}
+    <script>
+        window.onload = ()=> {
+            let calendarElt = document.querySelector("#calendar");
+
+            let calendar = new FullCalendar.Calendar(calendarElt, {
+                initialView: 'timeGridWeek',
+                locale:'fr',
+                timeZone:'Europe/Paris',
+                headerToolbar: {
+                    start: 'prev,next today',
+                    center: 'title',
+                    end: 'dayGridMonth,timeGridWeek'
+                },
+                // affichage des évènements
+                events: {{data|raw}}
+            });
+
+            calendar.render();
+        }
+    </script>
+
+{% endblock %}

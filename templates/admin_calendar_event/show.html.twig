@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block title %}Admin - modifier un évènement{% endblock %}
+
+{% block body %}
+    <h1>Voir mon évènement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ calendar_event.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ calendar_event.title }}</td>
+            </tr>
+            <tr>
+                <th>Date debut</th>
+                <td>{{ calendar_event.startAt ? calendar_event.startAt|date('d-m-Y H:i') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date fin</th>
+                <td>{{ calendar_event.endAt ? calendar_event.endAt|date('d-m-Y H:i') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ calendar_event.description }}</td>
+            </tr>
+            <tr>
+                <th>Aujourd'hui</th>
+                <td>{{ calendar_event.allDay ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary"><a href="{{ path('admin_calendar_event_index') }}">Retour</a></button>
+
+    <button class="btn btn-warning">
+        <a href="{{ path('admin_calendar_event_edit', {'id': calendar_event.id}) }}">Modifier</a>
+    </button>
+
+    {{ include('admin_calendar_event/_delete_form.html.twig') }}
+{% endblock %}

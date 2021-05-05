@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/taek.css') }}">
+{% endblock %}
+
+{% block title %}Taekwonkido{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title-card">Taekwonkido</h1>
+
+        <!-- CARD 1 -->
+        <div class="cards">
+            <img src="{{ asset('img/img-taekwonkido.jpg') }}" class="col-6 mr-4" alt="">
+            <div class="text">
+                <p>Techniquement, le Taekwonkido® présente beaucoup de coups de pied
+                    sautés, retournés, mais aussi des mouvements de bras. Un tapis (style tatami) est bien souvent
+                    nécessaire pour les chutes lors des techniques d’autodéfense.</p>
+                <p>Le recours à des protections lors des assauts et surtout à des cibles en mousse permet une
+                    pratique respectant l’intégrité physique et la santé du pratiquant, et surtout constitue un bon
+                    défouloir dont le dynamisme séduit les plus jeunes.</p>
+                <p>Afin de faciliter l’apprentissage, certaines formes trop souvent rébarbatives sont devenues
+                    optionnelles, des ateliers ont été simplifiés ou remplacés par des techniques d’autodéfense plus
+                    accessibles. A partir d’un certain niveau, le travail des armes et notamment du sabre coréen (Gumdo) est
+                    abordé.</p>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="cards">
+            <div class="text">
+                <p>Le Taekwonkido est une méthode éducative, fondée par Me Rémi Mollet et le Dr. Jean-Laurent Taddeï,
+                    synthétisant les techniques de Karaté, Taekwondo, de Hapkido, de Gumdo
+                    (sabre), d’arts martiaux coréens et surtout de Khido, méthode supérieure
+                    instaurée par Me Michel Morlon, créée en 1984.</p>
+                <p>Selon un programme technique repensé afin d’être
+                    accessible à tous, du plus jeune au vétéran, de la femme à l’homme, axé sur l’autodéfense et sur une
+                    pratique traditionnelle, le Taekwonkido® est avant tout une méthode d’éducation permettant de
+                    former l’individu afin de le responsabiliser, de
+                    l’aider à surmonter les embûches et tracas du quotidien et de l’aider à s’intégrer dans la société. Basé
+                    sur le développement du
+                    goût de l’effort et l’aptitude à dépasser ses limites, il doit valoriser le pratiquant et l’aider à être
+                    mieux dans sa peau, tout en sachant respecter autrui et accepter l’autorité.</p>
+            </div>
+            <img src="{{ asset('img/img-sinkido.jpg') }}" class="col-5 ml-4" alt="">
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="cards">
+            <img src="{{ asset('img/img-1.jpg') }}" class="col-5 mr-4" alt="">
+            <div class="text">
+                <p>Techniquement, le Taekwonkido® présente beaucoup de coups de pied
+                    sautés, retournés, mais aussi des mouvements de bras.</p>
+                <p>Un tapis (style tatami) est bien souvent
+                    nécessaire pour les chutes lors des techniques d’autodéfense.</p>
+                <p>Le recours à des protections lors des
+                    assauts et surtout à des cibles en mousse permet une pratique respectant l’intégrité physique et la
+                    santé du pratiquant, et surtout constitue un bon défouloir dont le dynamisme séduit les plus
+                    jeunes.</p>
+                <p>Afin de faciliter l’apprentissage, certaines formes trop souvent rébarbatives sont devenues
+                    optionnelles, des ateliers ont été simplifiés ou remplacés par des techniques d’autodéfense plus
+                    accessibles.</p>
+                <p>A partir d’un certain
+                    niveau, le travail des armes et notamment du sabre coréen (Gumdo) est abordé.</p>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="cards">
+            <div class="text">
+                <p>Le Taekwonkido est basé sur une utilisation naturelle du corps. Le pratiquant de Taekwonkido® doit être
+                    amené à canaliser son énergie. Par son côté physique, l’entraînement devient une sorte d’ascèse, un
+                    exutoire où s’élimine le trop-plein d’énergie de
+                    bien des jeunes.</p>
+                <p>Me Rémi Mollet est par ailleurs professeur de Lettres classiques en collège et
+                    lycée, il pratique depuis plus de 35 ans et enseigne les arts martiaux depuis plus de 30 ans, il est
+                    diplômé
+                    d’Etat (France et Corée) : toute cette expérience pédagogique sera mise au service du Taekwonkido.</p>
+            </div>
+            <img src="{{ asset('img/img-2.jpg') }}" class="col-5 ml-4" alt="">
+        </div>
+    </div>
+{% endblock %}

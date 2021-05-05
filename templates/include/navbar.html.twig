@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="{{ asset('') }}">
+        <img src="{{ asset('img/logo/logo.png') }}" alt="logo du site">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('article_index') }}">Le club</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                   aria-haspopup="true" aria-expanded="false">Nos disciplines</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ path('taekwonkido_index') }}">Taekonkido</a>
+                    <a class="dropdown-item" href="{{ path('sinkido_index') }}">Sinkido</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                   aria-haspopup="true" aria-expanded="false">Maîtres</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ path('grand_maitre_index') }}">Le grand maître</a>
+                    <a class="dropdown-item" href="{{ path('maitre_index') }}">Le maître</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('calendar_event_index') }}">Agenda / Horaire</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+            </li>
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">Gestion de l' administrateur</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ path('admin_article_index') }}">Gestion des articles</a>
+                        <a class="dropdown-item" href="{{ path('admin_file_index') }}">Gestion des fichiers</a>
+                        <a class="dropdown-item" href="{{ path('admin_calendar_event_index') }}">Gestion des cours</a>
+                        <a class="dropdown-item" href="{{ path('admin_user_index') }}">Gestion des utilisateurs</a>
+                        <a class="dropdown-item" href="{{ path('admin_contact_index') }}">Gestion du contact</a>
+                    </div>
+                </li>
+            {% endif %}
+            {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_logout') }}">déconnecter</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_login') }}">connecter</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

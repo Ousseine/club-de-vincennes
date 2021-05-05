@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/maitre.css') }}">
+{% endblock %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title-card">Instructeur STESSO</h1>
+
+        <div class="cards">
+            <div class="img-card">
+                <img src="{{ asset('img/stesso.jpg') }}" alt="image du maitre">
+            </div>
+            <div class="teacher-text">
+                <ul>
+                    <li>Licence n° 14012565 (KOREA HAPKIDO TOTAL FEDERATION) DARP IDF n°2 13 94 050 (FFTDA)</li>
+                    <li><strong>Diplômé lutétia</strong>:
+                        <ul>
+                            <li>Tonfa & Balawak Degrés 2</li>
+                            <li>PENCHAK SILAT (ECJ), Degrés 1</li>
+                            <li>KICK JUTSU (W.K.J.A) 1ère Dan</li>
+                        </ul>
+                    </li>
+                    <li>BLACK BELT TAEKWONKIDO (CENACLE REMI MOLLET) Ceinture Noir (SKKD degrés 4)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

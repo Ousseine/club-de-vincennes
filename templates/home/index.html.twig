@@ -1,0 +1,175 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Club De Vincennes - Page d' accueil{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
+{% endblock %}
+
+{% block body %}
+    <!-- DEBUT CAROUSEL -->
+    <div class="carousel slide" id="main-carousel" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#main-carousel" data-slide-to="1"></li>
+            <li data-target="#main-carousel" data-slide-to="2"></li>
+            <li data-target="#main-carousel" data-slide-to="3"></li>
+        </ol>
+        <!-- CAROUSEL INDICATOR -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block img-fluid" src="{{ asset('img/carousel-1.png') }}" alt="img carousel">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="{{ asset('img/carousel-2.png') }}" alt="img carousel">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="{{ asset('img/carousel-3.png') }}" alt="img carousel">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid" src="{{ asset('img/carousel-4.png') }}" alt="img carousel">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main>
+        <!-- CARD DISCIPLINE -->
+        <div class=" discipline my-5">
+            <h2 class="title-card">Les disciplines enseignées</h2>
+            <div class="row card-row">
+                <div class="col-sm-6">
+                    <h3>Sinkido Self-Défense Système</h3>
+                    <p>Le Sinkido Self-Défense Système est une méthode qui s' adresse
+                        exclusivement aux adultes et aux seniors. C'est un programme d'autodéfense accessible, axé sur
+                        l' efficacité, il est directement applicable en combat réel.</p>
+                    <img src="{{ asset('img/img-sinkido.jpg') }}" class="col mt-2 mb-4" alt="image sinkido">
+                    <div class="text-center align-bottom">
+                        <a type="button" class="btn btn-m col-sm-6 text-center en-savoir-plus"
+                           href="{{ path('sinkido_index') }}" style="font-size: 1rem;">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h3>Taekwonkido</h3>
+                    <p> Le Taekwonkido® est une méthode éducative, fondée par Me Rémi
+                        Mollet et le Dr. Jean-Laurent Taddeï, synthétisant les techniques de Karaté, Taekwondo, de
+                        Hapkido, de Gumdo (sabre), d’arts martiaux coréens et surtout de Khido, méthode
+                        supérieure instaurée par Me Michel Morlon, créée en 1984.</p>
+                    <img src="{{  asset('img/img-taekwonkido.jpg') }}" class="col mt-2 mb-4" alt="image taekwonkido">
+                    <div class="text-center align-bottom">
+                        <a type="button" class="btn btn-m col-sm-6 text-center en-savoir-plus"
+                           href="{{ path('taekwonkido_index') }}" style="font-size: 1rem;">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD PRESENTATION DU CLUB -->
+        <div class="presentation-club">
+            <h2 class="title-card">Présentation du club</h2>
+            <img src="{{ asset('img/img-club.jpg') }}" class="col mb-4" alt="image du club">
+            <p>
+                Depuis 2016, le club de Vincennes accueille des pratiquants. Les cours dispensés par les maîtres
+                mettent l'accent sur une pratique ouverte et accessible a tous. La pratique des arts martiaux permet
+                de stimuler à la fois le corps et l'esprit.
+                Le club de Vincennes est spécialisé dans la pratique du Taekwonkido. Cet art martial est une combinaison
+                de plusieurs arts martiaux coréens : le Taekwondo, l'Hapkido, le Karaté le Hadding gumdo.
+
+                <div class="text-center align-bottom">
+                    <a type="button" class="btn btn-m col-sm-6 text-center en-savoir-plus"
+                       href="{{ path('article_index') }}">En savoir plus</a>
+                </div>
+            </p>
+        </div>
+
+        <!-- CARD GRAND METTRE -->
+        <div class="big-teacher my-5">
+            <h2 class="title-card">Le grand maître</h2>
+            <div class=" big-teacher-item">
+                <img src="{{ asset('img/img-grand-maitre.jpg') }}" alt="image grand mettre en action" />
+                <p>
+                    Au cours de ses 47 années de pratique le Maître Rémi
+                    Mollet hautement gradé en Taekwondo, a notamment eu comme disciples Pascal Gentil, Valérie Chevé et
+                    Thierry Troudart. Il a également participer a la democratisation de cet art martial
+                    en publiant en 1988, un livre "Découvrir le Taekwondo" (aux éditions Amphora) et en 2006 l'ouvrage
+                    "Hapkido, Art Coréen d'autodéfense" (Budo Edition) et d'autres sont en préparation.
+                    <br><br> Deux fois recompensé du titre d"Instructeur de l'année" par le hall of fame de Floride en
+                    1998 et en 2004, il met ses 35 années d'expérience pédagogique au service de la transmission de
+                    cette discipline.
+
+                    <br><br> Egalement gradé en Hapkido, Daehan, Sin Mo Hapkido et Kick-Boxing, il a fondé une nouvelle
+                    discipline le Taekwonkido en synthétisant les techniques de Karaté, Taekwondo, de Hapkido, de Gumdo
+                    (sabre), d’arts martiaux coréens
+                    et surtout de Khido, méthode supérieure instaurée par Me Michel Morlon, créée en 1984.
+
+                    <br><br> Mais il est également professeur de Lettres Classiques au collège-lycée Albert de Mun à
+                    Nogent/Marne. Ainsi la tête et les jambes sont réunies en une seule personne !
+                </p>
+            </div>
+        </div>
+
+        <!-- CARD SPONSORS - SLIDER -->
+        <div class="cards">
+            <h3 class="h-sponsors">Nos sponsors</h3>
+            <span class="prev-arrow arrow" style="display: none;"><i class="fas fa-chevron-circle-left"></i></span>
+            <span class="next-arrow arrow" style="display: none;"><i class="fas fa-chevron-circle-right"></i></span>
+
+            <div class="slider">
+                <div class="slider_item">
+                    <a href="https://concept-paradise-france.net/" target="_blank">
+                        <img src="{{ asset('img/logo/concept-paradise.png') }}" alt="logo concept paradise">
+                    </a>
+                </div>
+
+                <div class="slider_item">
+                    <a href="https://icibillet.com/" target="_blank">
+                        <img src="{{ asset('img/logo/ici-billet.png') }}" alt="logo iciBillet">
+                    </a>
+                </div>
+
+                <div class="slider_item">
+                    <a href="https://inisport.com/" target="_blank">
+                        <img src="{{ asset('img/logo/inisport.png') }}" alt="logo iniSport">
+                    </a>
+                </div>
+
+                <div class="slider_item">
+                    <a href="https://gardiennageparis.fr/" target="_blank">
+                        <img src="{{ asset('img/logo/rms-securite.png') }}" alt="logo rmc">
+                    </a>
+                </div>
+
+                <div class="slider_item">
+                    <a href="http://enreso.org/" target="_blank">
+                        <img src="{{ asset('img/logo/enreso.png') }}" alt="logo concept paradise">
+                    </a>
+                </div>
+
+                <div class="slider_item">
+                    <a href="https://www.yessanetservice.com/" target="_blank">
+                        <img src="{{ asset('img/logo/yessa.png') }}" alt="logo Yns Yessa Net Service">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" crossorigin="anonymous"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{{ asset('js/slider.js') }}"></script>
+{% endblock %}

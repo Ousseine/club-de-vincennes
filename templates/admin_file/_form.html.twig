@@ -1,0 +1,18 @@
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{{ form_start(form) }}
+    <div class="d-grid">
+        <div class="title">
+            {{ form_label(form.title, 'Nom du fichier') }}
+            {{ form_widget(form.title) }}
+        </div>
+        <div class="file">
+            {{ form_label(form.title, 'Inserer un fichier') }}
+            {{ form_widget(form.image) }}
+        </div>
+    </div>
+
+    <button class="btn btn-success my-2">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

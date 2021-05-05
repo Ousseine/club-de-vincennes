@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Contact</h1>
+    <div class="container">
+        <div class="img-contact">
+            <img src="{{ asset('img/contact.png') }}" alt="" />
+        </div>
+        <div class="contacts">
+            {% for contact in contacts %}
+                <div class="contact-item">
+                    <h5>Adresse</h5>
+                    <h6>DOJO SALLE ALEMANA</h6>
+                    <div class="adress">
+                        <div class="street-postalCode">
+                            <p class="street">{{ contact.street }}</p>
+                            <p class="postalCode">{{ contact.postalCode }} {{ contact.city }}</p>
+                        </div>
+                        <div class="country">
+                            <p class="country-item">{{ contact.country }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <h5>Téléphone</h5>
+                    <p class="phone">{{ contact.phone }}</p>
+                </div>
+                <div class="contact-item">
+                    <h5>Networks</h5>
+                    <div class="networks">
+                        <a href="https://www.facebook.com/taekwonkidovincennes" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/taekwonkidovincennes/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <h5>Courier électronique</h5>
+                    <p class="email">{{ contact.email }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

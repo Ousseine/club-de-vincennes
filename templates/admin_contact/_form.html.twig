@@ -1,0 +1,42 @@
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{{ form_start(form) }}
+    <div class="contain">
+        <div class="phone-email form">
+            <div class="phone">
+                {{ form_label(form.phone, 'Téléphone') }}
+                {{ form_widget(form.phone) }}
+            </div>
+            <div class="email">
+                {{ form_label(form.email, 'Adresse e-mail') }}
+                {{ form_widget(form.email) }}
+            </div>
+        </div>
+        <div class="street-postalCode form">
+            <div class="street">
+                {{ form_label(form.street, 'N° et Nom de la Rue') }}
+                {{ form_widget(form.street) }}
+            </div>
+
+            <div class="postalCode">
+                {{ form_label(form.postalCode, 'Code postal') }}
+                {{ form_widget(form.postalCode) }}
+            </div>
+        </div>
+
+        <div class="city-country form">
+            <div class="city">
+                {{ form_label(form.city, 'Ville') }}
+                {{ form_widget(form.city) }}
+            </div>
+            <div class="country">
+                {{ form_label(form.country, 'Country') }}
+                {{ form_widget(form.country) }}
+            </div>
+        </div>
+
+        <button class="btn btn-success btn-sm my-2">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+{{ form_end(form) }}

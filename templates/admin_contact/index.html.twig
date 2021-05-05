@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <h1>Contact</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Téléphone</th>
+                <th>Adresse e-mail</th>
+                <th>N° et Nom de la Rue</th>
+                <th>Code postal</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.phone }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.street }}</td>
+                <td>{{ contact.postalCode }}</td>
+                <td>{{ contact.city }}</td>
+                <td>{{ contact.country }}</td>
+                <td>
+                    <button class="btn btn-secondary btn-sm">
+                        <a href="{{ path('admin_contact_show', {'id': contact.id}) }}">Voir</a>
+                    </button>
+                    <button class="btn btn-warning btn-sm">
+                        <a href="{{ path('admin_contact_edit', {'id': contact.id}) }}">Modifier</a>
+                    </button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Oups ! aucun contact trouver</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button class="btn btn-info btn-lg"><a href="{{ path('admin_contact_new') }}">Ajouter un contact</a></button>
+{% endblock %}

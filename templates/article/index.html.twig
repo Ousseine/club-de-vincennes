@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/article.css') }}" />
+{% endblock %}
+
+{% block title %}Le Club{% endblock %}
+
+{% block body %}
+    <h1 class="title-card">Le Club de Vincennes</h1>
+
+    <div class="cards">
+        <img src="{{ asset('img/img-club.jpg') }}" class="col mb-4" alt="image du club">
+        <p class="text-club">
+            Depuis 2016, le club de Vincennes accueille des pratiquants. Les cours dispensés par les maîtres
+            mettent l' accent sur une pratique ouverte et accessible a tous. La pratique des arts martiaux permet
+            de stimuler à la fois le corps et l'esprit.
+            Le club de Vincennes est spécialisé dans la pratique du Taekwonkido. Cet art martial est une combinaison
+            de plusieurs arts martiaux coréens : le Taekwondo, l'Hapkido, le Karaté le Hadding gumdo.
+        </p>
+
+        <img src="{{ asset('img/img-club-2.jpg') }}" class="col mb-4" alt="image du club">
+        <p class="text-club">
+            A ceux ci d' autres techniques de différents arts martiaux tels le khido, ont été également utilisées.
+            Le taekwonkido est axé plus particulièrement sur l' autodéfense, et sur l' utilisation de la puissance
+            (énergie cinétique).
+        </p>
+    </div>
+{% endblock %}

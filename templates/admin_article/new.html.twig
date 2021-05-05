@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block title %}Ajouter un article{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un article</h1>
+
+    {{ include('admin_article/_form.html.twig') }}
+
+    <button class="btn btn-primary"><a href="{{ path('admin_article_index') }}">Retour</a></button>
+{% endblock %}
