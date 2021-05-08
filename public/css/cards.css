@@ -1,0 +1,24 @@
+.card {
+    margin: 3rem 0;
+    border: none;
+}
+
+.card-content {
+    width: 100%;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.content {
+    font-size: 22px;
+    margin-top: 2rem;
+}

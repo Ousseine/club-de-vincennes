@@ -1,35 +1,52 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
 {% block css %}
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 {% endblock %}
 
-{% block title %}Images/Vidéos{% endblock %}
+{% block title %}Gestions des fichiers{% endblock %}
 
 {% block body %}
-    <div class="contain">
-        <h1>Images/Vidéos</h1>
+    <h1>Images / Vidéos</h1>
 
-        <div class="file">
-            {% for file in files %}
-                <div class="title">
-                    <h4>Nom du fichier : <span class="text-danger">{{ file.title }}</span></h4>
-                </div>
-                <div class="files">
-                    <img src="{{ asset('uploads/' ~ file.imageFilename) }}" width="400" alt="fichier" />
-                </div>
-                <div class="action">
-                    <button class="btn btn-secondary">
-                        <a href="{{ path('admin_file_show', {'id': file.id}) }}">Voir</a>
-                    </button>
-                    <button class="btn btn-warning">
-                        <a href="{{ path('admin_file_edit', {'id': file.id}) }}">Modifier</a>
-                    </button>
-                </div>
-            {% else %}
-                <span class="notFound">Oups ! pas de fichier</span>
-            {% endfor %}
+    {% for file in files %}
+    <div class="add file">
+        <div class="image">
+            <img src="{{ asset('uploads/' ~ file.imageFilename) }}" width="400" alt="fichier" />
         </div>
-        <button class="btn btn-info btn-lg my-2"><a href="{{ path('admin_file_new') }}">Ajouter un fichier</a></button>
+        <div class="description">
+            <table class="table">
+                <tr>
+                    <th>Titre du fichier</th>
+                    <td>{{ file.title }}</td>
+                </tr>
+                <tr>
+                    <th>Catégorie du fichier</th>
+                    <td>
+                        {% if file.category %}
+                            {{ file.category }}
+                        {% else %}
+                            <span>Cet image n'a pas de catégorie</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>actions</th>
+                    <td>
+                        <button class="btn btn-secondary">
+                            <a href="{{ path('admin_file_show', {'id': file.id}) }}">Voir</a>
+                        </button>
+                        <button class="btn btn-warning">
+                            <a href="{{ path('admin_file_edit', {'id': file.id}) }}">Modifier</a>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
+    {% else %}
+        <span class="notFound">Oups ! pas de fichier trouver</span>
+    {% endfor %}
+
+    <button class="btn btn-info btn-lg my-2"><a href="{{ path('admin_file_new') }}">Ajouter un fichier</a></button>
 {% endblock %}

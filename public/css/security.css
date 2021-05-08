@@ -1,0 +1,13 @@
+.form-security {
+    background-color: red;
+    width: 40%;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.label-email,
+.label-password,
+.label-checkbox {
+    color: white;
+}

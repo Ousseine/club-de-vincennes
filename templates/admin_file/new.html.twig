@@ -1,18 +1,15 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'base-admin.html.twig' %}
 
 {% block css %}
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 {% endblock %}
 
-{% block title %}Ajouter un nouveau fichier{% endblock %}
+{% block title %}Gestion des fichiers - Ajouter un fichier{% endblock %}
 
 {% block body %}
-    <div class="contain">
-        <h1>Ajouter un nouveau fichier</h1>
+    <h1>Ajouter un nouveau fichier</h1>
 
-        {{ include('admin_file/_form.html.twig') }}
+    {{ include('admin_file/_form.html.twig') }}
 
-        <button class="btn btn-primary btn-lg"><a href="{{ path('admin_file_index') }}">Retour</a></button>
-    </div>
+    <button class="btn btn-primary btn-lg"><a href="{{ path('admin_file_index') }}">Retour</a></button>
 {% endblock %}

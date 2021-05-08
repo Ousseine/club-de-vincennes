@@ -1,6 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
-{% block title %}Sinkido | Admin - Modifier un fichier{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block title %}Gestion des fichiers - Modifier un fichier{% endblock %}
 
 {% block body %}
     <h1>Modifier le fichier</h1>

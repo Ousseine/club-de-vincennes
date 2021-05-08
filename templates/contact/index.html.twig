@@ -1,29 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
-
 {% block css %}
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 {% endblock %}
 
+{% block title %}Contact{% endblock %}
+
 {% block body %}
-    <h1>Contact</h1>
-    <div class="container">
-        <div class="img-contact">
-            <img src="{{ asset('img/contact.png') }}" alt="" />
+    <h1 class="title-card">Contact</h1>
+
+    <div class="contact">
+        <div class="image-contact">
+            <img src="{{ asset('img/img-contact.jpg') }}" alt="logo site" />
         </div>
-        <div class="contacts">
+        <div class="contact-body">
             {% for contact in contacts %}
                 <div class="contact-item">
-                    <h5>Adresse</h5>
-                    <h6>DOJO SALLE ALEMANA</h6>
+                    <h5>Dojo salle alemana</h5>
                     <div class="adress">
                         <div class="street-postalCode">
-                            <p class="street">{{ contact.street }}</p>
-                            <p class="postalCode">{{ contact.postalCode }} {{ contact.city }}</p>
+                            {{ contact.street }}
+                            {{ contact.postalCode }}
                         </div>
                         <div class="country">
-                            <p class="country-item">{{ contact.country }}</p>
+                            {{ contact.city }}, {{ contact.country }}
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                     <p class="phone">{{ contact.phone }}</p>
                 </div>
                 <div class="contact-item">
-                    <h5>Networks</h5>
+                    <h5>Réseaux sociaux</h5>
                     <div class="networks">
                         <a href="https://www.facebook.com/taekwonkidovincennes" target="_blank">
                             <i class="fab fa-facebook"></i>
@@ -43,8 +43,8 @@
                     </div>
                 </div>
                 <div class="contact-item">
-                    <h5>Courier électronique</h5>
-                    <p class="email">{{ contact.email }}</p>
+                    <h5>Courrier électronique</h5>
+                    <a class="email" href="mailto:">{{ contact.email }}</a>
                 </div>
             {% endfor %}
         </div>

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
 {% block css %}
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
@@ -7,53 +7,51 @@
 {% block title %}Admin - Agenda/Horaire{% endblock %}
 
 {% block body %}
-    <div class="content">
-        <h1>Mon agenda</h1>
+    <h1 class="title-admin">Mon agenda</h1>
 
-        <table class="table table-success">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Titre</th>
-                    <th>Date debut</th>
-                    <th>Date fin</th>
-                    <th>Description</th>
-                    <th>AllDay</th>
-                    <th>Couleur du fond</th>
-                    <th>Couleur du text</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for calendar_event in calendar_events %}
-                <tr>
-                    <td>{{ calendar_event.id }}</td>
-                    <td>{{ calendar_event.title }}</td>
-                    <td>{{ calendar_event.startAt ? calendar_event.startAt|date('d-m-Y H:i') : '' }}</td>
-                    <td>{{ calendar_event.endAt ? calendar_event.endAt|date('d-m-Y H:i') : '' }}</td>
-                    <td>{{ calendar_event.description }}</td>
-                    <td>{{ calendar_event.allDay ? 'Yes' : 'No' }}</td>
-                    <td>{{ calendar_event.backgroundColor }}</td>
-                    <td>{{ calendar_event.textColor }}</td>
-                    <td class="actions">
-                        <button class="btn btn-secondary btn-sm">
-                            <a href="{{ path('admin_calendar_event_show', {'id': calendar_event.id}) }}">Voir</a>
-                        </button>
-                        <button class="btn btn-warning">
-                            <a href="{{ path('admin_calendar_event_edit', {'id': calendar_event.id}) }}">modifier</a>
-                        </button>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="9">Oups! aucun évènement trouver</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <table class="table table-success">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Date debut</th>
+                <th>Date fin</th>
+                <th>Description</th>
+                <th>AllDay</th>
+                <th>Couleur du fond</th>
+                <th>Couleur du text</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calendar_event in calendar_events %}
+            <tr>
+                <td>{{ calendar_event.id }}</td>
+                <td>{{ calendar_event.title }}</td>
+                <td>{{ calendar_event.startAt ? calendar_event.startAt|date('d-m-Y H:i') : '' }}</td>
+                <td>{{ calendar_event.endAt ? calendar_event.endAt|date('d-m-Y H:i') : '' }}</td>
+                <td>{{ calendar_event.description }}</td>
+                <td>{{ calendar_event.allDay ? 'Yes' : 'No' }}</td>
+                <td>{{ calendar_event.backgroundColor }}</td>
+                <td>{{ calendar_event.textColor }}</td>
+                <td class="actions">
+                    <button class="btn btn-secondary btn-sm">
+                        <a href="{{ path('admin_calendar_event_show', {'id': calendar_event.id}) }}">Voir</a>
+                    </button>
+                    <button class="btn btn-warning btn-sm">
+                        <a href="{{ path('admin_calendar_event_edit', {'id': calendar_event.id}) }}">modifier</a>
+                    </button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Oups! aucun évènement trouver</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-        <button class="btn btn-info btn-sm btn-lg">
-            <a href="{{ path('admin_calendar_event_new') }}">Ajouter un évènement</a>
-        </button>
-    </div>
+    <button class="btn btn-info btn-lg">
+        <a href="{{ path('admin_calendar_event_new') }}">Ajouter un évènement</a>
+    </button>
 {% endblock %}

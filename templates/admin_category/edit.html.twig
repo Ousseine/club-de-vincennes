@@ -1,0 +1,17 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
+
+{% block title %}Gestion des catégories - Modifier une catégorie{% endblock %}
+
+{% block body %}
+    <h1>Modifier une catégorie</h1>
+
+    {{ include('admin_category/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+
+    <button class="btn btn-primary"><a href="{{ path('admin_category_index') }}">Retour</a></button>
+
+    {{ include('admin_category/_delete_form.html.twig') }}
+{% endblock %}

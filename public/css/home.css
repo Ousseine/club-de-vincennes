@@ -1,6 +1,9 @@
+/*-------------------- carousel -----------------------------------*/
 .carousel {
     margin: 0;
 }
+
+/*------------------------------------ main ---------------------------------------*/
 
 main p {
     font-size: 20px;
@@ -21,7 +24,8 @@ main p {
     border-radius: 5px;
 }
 
-.big-teacher-item img {
+/* le grand maitre */
+.big-teacher-img {
     float: left;
     height: 280px;
     margin-right: 1rem;
@@ -58,8 +62,13 @@ main p {
 
 .h-sponsors {
     color: #f10707;
-    font-size: 1.5em!important;
     font-weight: 400;
     font-family: "Lucida Fax", serif;
     margin: 20px 0;
+}
+
+@media all {
+    .item-taekwonkido {
+        margin-top: 2rem;
+    }
 }

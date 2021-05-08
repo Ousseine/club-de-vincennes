@@ -1,4 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+{% endblock %}
 
 {% block title %}Admin - Ajouter un nouveau évènement{% endblock %}
 

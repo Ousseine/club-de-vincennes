@@ -45,11 +45,11 @@
     <!-- MAIN -->
     <main>
         <!-- CARD DISCIPLINE -->
-        <div class=" discipline my-5">
-            <h2 class="title-card">Les disciplines enseignées</h2>
-            <div class="row card-row">
-                <div class="col-sm-6">
-                    <h3>Sinkido Self-Défense Système</h3>
+        <div class="discipline my-5">
+            <h2 class="title-card discipline-title">Les disciplines enseignées</h2>
+            <div class="discipline-body row card-row">
+                <div class="discipline-item item-sinkido col-sm-6">
+                    <h4>Sinkido Self-Défense Système</h4>
                     <p>Le Sinkido Self-Défense Système est une méthode qui s' adresse
                         exclusivement aux adultes et aux seniors. C'est un programme d'autodéfense accessible, axé sur
                         l' efficacité, il est directement applicable en combat réel.</p>
@@ -59,8 +59,8 @@
                            href="{{ path('sinkido_index') }}" style="font-size: 1rem;">En savoir plus</a>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <h3>Taekwonkido</h3>
+                <div class="discipline-item item-taekwonkido col-sm-6">
+                    <h4>Taekwonkido</h4>
                     <p> Le Taekwonkido® est une méthode éducative, fondée par Me Rémi
                         Mollet et le Dr. Jean-Laurent Taddeï, synthétisant les techniques de Karaté, Taekwondo, de
                         Hapkido, de Gumdo (sabre), d’arts martiaux coréens et surtout de Khido, méthode
@@ -84,20 +84,20 @@
                 de stimuler à la fois le corps et l'esprit.
                 Le club de Vincennes est spécialisé dans la pratique du Taekwonkido. Cet art martial est une combinaison
                 de plusieurs arts martiaux coréens : le Taekwondo, l'Hapkido, le Karaté le Hadding gumdo.
-
-                <div class="text-center align-bottom">
-                    <a type="button" class="btn btn-m col-sm-6 text-center en-savoir-plus"
-                       href="{{ path('article_index') }}">En savoir plus</a>
-                </div>
             </p>
+            <div class="text-center align-bottom">
+                <a type="button" class="btn btn-m col-sm-6 text-center en-savoir-plus"
+                   href="{{ path('club_index') }}">En savoir plus</a>
+            </div>
         </div>
 
         <!-- CARD GRAND METTRE -->
         <div class="big-teacher my-5">
-            <h2 class="title-card">Le grand maître</h2>
-            <div class=" big-teacher-item">
-                <img src="{{ asset('img/img-grand-maitre.jpg') }}" alt="image grand mettre en action" />
-                <p>
+            <h2 class="title-card big-teacher-title">Le grand maître</h2>
+            <div class="big-teacher-body">
+                <img src="{{ asset('img/img-grand-maitre.jpg') }}" class="big-teacher-img" alt="image grand mettre en
+                action"/>
+                <p class="big-teacher-content">
                     Au cours de ses 47 années de pratique le Maître Rémi
                     Mollet hautement gradé en Taekwondo, a notamment eu comme disciples Pascal Gentil, Valérie Chevé et
                     Thierry Troudart. Il a également participer a la democratisation de cet art martial
@@ -157,12 +157,11 @@
 
                 <div class="slider_item">
                     <a href="https://www.yessanetservice.com/" target="_blank">
-                        <img src="{{ asset('img/logo/yessa.png') }}" alt="logo Yns Yessa Net Service">
+                        <img src="{{ asset('img/logo/yns-yessa-net-service.png') }}" alt="logo Yns Yessa Net Service">
                     </a>
                 </div>
             </div>
         </div>
-
     </main>
 {% endblock %}
 

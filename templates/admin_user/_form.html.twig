@@ -1,4 +1,20 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn btn-success my-2">{{ button_label|default('enregistrer') }}</button>
-{{ form_end(form) }}
+<div class="form form-user">
+    {{ form_start(form) }}
+        {{ form_label(form.name, 'Nom d\'utilisateur', {
+             'label_attr': {'class': 'label-name'}
+        }) }}
+        {{ form_widget(form.name) }}
+
+        {{ form_label(form.email, 'Adresse e-mail', {
+             'label_attr': {'class': 'label-email'}
+        }) }}
+        {{ form_widget(form.email) }}
+
+        {{ form_label(form.password, 'Mot de passe', {
+             'label_attr': {'class': 'label-password'}
+        }) }}
+        {{ form_widget(form.password) }}
+
+        <button class="btn btn-success my-2">{{ button_label|default('enregistrer') }}</button>
+    {{ form_end(form) }}
+</div>

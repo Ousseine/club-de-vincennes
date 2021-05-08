@@ -1,25 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block css %}
-    <link rel="stylesheet" href="{{ asset('css/sinkido.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cards.css') }}">
 {% endblock %}
 
-{% block title %}Sinkido{% endblock %}
+{% block title %}Le Sinkido{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="title-card">Sinkido</h1>
+    <h1 class="title-card">Le Sinkido</h1>
 
-        <div class="cards">
-            <img src="{{ asset('uploads/' ~ files[0].imageFilename) }}" alt="image sinkido">
-            <div class="mt-4 text-justify">
-                <p>Axé sur l' efficacité, il est directement applicable en combat réel. C'est la simplicité du programme
-                    qui permet de ne pas hésiter en "combat de survie", de mobiliser tous ses moyens (frappes, clés,
-                    fauchages, coups de pied bas et moyens, etc.) pour un résultat maximal. Fondé sur une approche
-                    dynamique, le Sinkido est un concentré de techniques efficientes et pratiques.</p>
-                <p>Rationnel et progressif, le programme par grades peut être appréhendé par tout adulte qui se préoccupe
-                    d' efficacité plus que de médailles sportives.</p>
+    <!-- CARDS -->
+    {% for article in articles %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-img">
+                    <img src="{{ asset('uploads/' ~ article.file) }}" class="image" alt="image taekwonkido">
+                </div>
+                <p class="content">{{ article.content }}</p>
             </div>
         </div>
-    </div>
+    {% else %}
+        <span>Aucun article publier dans cette section</span>
+    {% endfor %}
 {% endblock %}

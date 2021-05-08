@@ -2,11 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Article;
-use App\Form\Article3Type;
 use App\Repository\ArticleRepository;
+use App\Repository\FileRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -21,7 +19,7 @@ class MaitreController extends AbstractController
     public function index(ArticleRepository $articleRepository): Response
     {
         return $this->render('maitre/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'articles' => $articleRepository->findBy(['category' => 3]),
         ]);
     }
 }

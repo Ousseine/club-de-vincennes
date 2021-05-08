@@ -1,41 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article index{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/cards.css') }}" />
+{% endblock %}
+
+{% block title %}Le Club{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
+    <h1 class="title-card">Le Club de Vincennes</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>File</th>
-                <th>CreatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td>{{ article.id }}</td>
-                <td>{{ article.title }}</td>
-                <td>{{ article.content }}</td>
-                <td>{{ article.file }}</td>
-                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('club_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('club_edit', {'id': article.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('club_new') }}">Create new</a>
+    <!-- CARDS -->
+    {% for article in articles %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-img">
+                    <img src="{{ asset('uploads/' ~ article.file) }}" class="image" alt="image taekwonkido">
+                </div>
+                <p class="content">{{ article.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

@@ -4,13 +4,11 @@
     <link rel="stylesheet" href="{{ asset('css/calendar.css') }}" />
 {% endblock %}
 
-{% block title %}Agenda / Horaires{% endblock %}
+{% block title %}Notre Agenda{% endblock %}
 
 {% block body %}
-
-    <h1>Agenda / Horaires</h1>
+    <h1 class="title-card">Notre Agenda</h1>
     <div id="calendar"></div>
-
 {% endblock %}
 
 {% block js %}
@@ -34,5 +32,4 @@
             calendar.render();
         }
     </script>
-
 {% endblock %}

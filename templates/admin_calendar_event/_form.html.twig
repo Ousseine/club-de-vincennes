@@ -1,41 +1,54 @@
-{% block css %}
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-{% endblock %}
-
-<div class="form-agenda">
+<div class="form form-agenda">
     {{ form_start(form) }}
         <div class="title-description">
-            {{ form_label(form.title, 'Titre') }}
+            {{ form_label(form.title, 'Titre', {
+                'label_attr': {'class': 'label-title'}
+            }) }}
             {{ form_widget(form.title) }}
-            {{ form_label(form.description, 'Description de l\'évènement') }}
-            {{ form_widget(form.description) }}
+
+            {{ form_label(form.description, 'Description de l\'évènement', {
+                'label_attr': {'class': 'label-description'}
+            }) }}
+            {{ form_widget(form.description, {
+                'attr': {'class': 'form-description'}
+            }) }}
         </div>
 
         <div class="dates">
             <div class="start">
-                {{ form_label(form.startAt, 'Date debut') }}
+                {{ form_label(form.startAt, 'Date debut', {
+                    'label_attr': {'class': 'label-start'}
+                }) }}
                 {{ form_widget(form.startAt) }}
             </div>
             <div class="end">
-                {{ form_label(form.endAt, 'Date fin') }}
+                {{ form_label(form.endAt, 'Date fin', {
+                    'label_attr': {'class': 'label-end'}
+                }) }}
                 {{ form_widget(form.endAt) }}
             </div>
         </div>
 
         <div class="colors">
             <div class="background-color">
-                {{ form_label(form.backgroundColor, 'Couleur du fond') }}
+                {{ form_label(form.backgroundColor, 'Couleur du fond', {
+                    'label_attr': {'class': 'label-background'}
+                }) }}
                 {{ form_widget(form.backgroundColor) }}
             </div>
             <div class="text-color">
-                {{ form_label(form.textColor, 'Couleur du text') }}
+                {{ form_label(form.textColor, 'Couleur du text', {
+                    'label_attr': {'class': 'label-color'}
+                }) }}
                 {{ form_widget(form.textColor) }}
             </div>
         </div>
 
         <div class="all-day">
             {{ form_widget(form.allDay) }}
-            {{ form_label(form.allDay, 'date du jour') }}
+            {{ form_label(form.allDay, 'date du jour', {
+                'label_attr': {'class': 'label-allday'}
+            }) }}
         </div>
 
         <button class="btn btn-success my-2">{{ button_label|default('Enregistrer') }}</button>

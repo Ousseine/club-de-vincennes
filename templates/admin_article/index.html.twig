@@ -7,21 +7,26 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <div class="contain article">
-        {% for article in articles %}
-            <div class="title">
-                <h4>{{ article.title }}</h4>
+    {% for article in articles %}
+        <div class="admin-article">
+            <div class="admin-title-article">
+                <h4>Titre : {{ article.title }}</h4>
             </div>
-            <div class="img">
-                <h4>Image ou vidéo associé</h4>
+            <div class="admin-category-article">
+                {% if article.category %}
+                    <h6>Catégorie: {{ article.category }}</h6>
+                {% else %}
+                    <h6>Catégorie : Cet article n'a pas de catégorie</h6>
+                {% endif %}
+            </div>
+            <div class="admin-img-article">
                 <img src="{{ asset('uploads/' ~ article.file) }}" width="100" alt="fichier de l' article">
             </div>
-            <div class="content">
-                <h4>contenu de l' article</h4>
+            <div class="admin-content-article my-2">
                 {{ article.content }}
             </div>
-            <div class="create">
-                <h4>Date de création</h4>
+            <div class="admin-create-article my-2">
+                <h6>Date de création</h6>
                 {{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}
             </div>
             <button class="btn btn-secondary">
@@ -30,9 +35,12 @@
             <button class="btn btn-warning">
                 <a href="{{ path('admin_article_edit', {'id': article.id})}}">Modifier</a>
             </button>
-            <button class="btn btn-info">
-                <a href="{{ path('admin_article_new') }}">Ajouter un article</a>
-            </button>
-        {% endfor %}
-    </div>
+        </div>
+    {% else %}
+        <span>Aucun article publier</span>
+    {% endfor %}
+
+    <button class="btn btn-info mt-4">
+        <a href="{{ path('admin_article_new') }}">Ajouter un article</a>
+    </button>
 {% endblock %}

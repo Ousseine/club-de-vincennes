@@ -1,42 +1,50 @@
-{% block css %}
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-{% endblock %}
-
+<div class="form form-contact">
 {{ form_start(form) }}
-    <div class="contain">
-        <div class="phone-email form">
+        <div class="form-contact-item phone-email">
             <div class="phone">
-                {{ form_label(form.phone, 'Téléphone') }}
+                {{ form_label(form.phone, 'Téléphone', {
+                    'label_attr': {'class': 'label-phone'}
+                }) }}
                 {{ form_widget(form.phone) }}
             </div>
             <div class="email">
-                {{ form_label(form.email, 'Adresse e-mail') }}
+                {{ form_label(form.email, 'Adresse e-mail', {
+                    'label_attr': {'class': 'label-email'}
+                }) }}
                 {{ form_widget(form.email) }}
             </div>
         </div>
-        <div class="street-postalCode form">
+        <div class="form-contact-item street-postalCode">
             <div class="street">
-                {{ form_label(form.street, 'N° et Nom de la Rue') }}
+                {{ form_label(form.street, 'N° et Nom de la Rue', {
+                    'label_attr': {'class': 'label-street'}
+                }) }}
                 {{ form_widget(form.street) }}
             </div>
 
             <div class="postalCode">
-                {{ form_label(form.postalCode, 'Code postal') }}
+                {{ form_label(form.postalCode, 'Code postal', {
+                    'label_attr': {'class': 'label-postal-code'}
+                }) }}
                 {{ form_widget(form.postalCode) }}
             </div>
         </div>
 
-        <div class="city-country form">
+        <div class="form-contact-item city-country">
             <div class="city">
-                {{ form_label(form.city, 'Ville') }}
+                {{ form_label(form.city, 'Ville', {
+                    'label_attr': {'class': 'label-city'}
+                }) }}
                 {{ form_widget(form.city) }}
             </div>
             <div class="country">
-                {{ form_label(form.country, 'Country') }}
+                {{ form_label(form.country, 'Country', {
+                    'label_attr': {'class': 'label-country'}
+                }) }}
                 {{ form_widget(form.country) }}
             </div>
         </div>
 
         <button class="btn btn-success btn-sm my-2">{{ button_label|default('Enregistrer') }}</button>
-    </div>
 {{ form_end(form) }}
+</div>

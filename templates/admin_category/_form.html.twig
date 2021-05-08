@@ -1,0 +1,10 @@
+<div class="form form-category">
+    {{ form_start(form) }}
+        {{ form_label(form.name, 'Nom de la catégorie', {
+            'label_attr': {'class': 'label-name'}
+        }) }}
+        {{ form_widget(form.name) }}
+
+        <button class="btn btn-success my-2">{{ button_label|default('Enregistrer') }}</button>
+    {{ form_end(form) }}
+</div>

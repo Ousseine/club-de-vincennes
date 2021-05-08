@@ -18,6 +18,7 @@ class ArticleType extends AbstractType
                'mapped' => false
             ])
             ->add('user')
+            ->add('category')
         ;
     }
 

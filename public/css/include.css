@@ -1,61 +1,69 @@
-/* navbar */
+/*------------------------------- navbar ---------------------------------*/
+@media all and (max-width: 668px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+}
 
 
-/* footer */
+/*------------------------------- footer ---------------------------------*/
 
 footer {
-    margin-top: 4rem;
     background-color: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 4rem 0 1rem 0;
+    padding: 4rem 8rem 1rem 8rem;
 }
 
-.network .fab {
-    color: #fff;
-    font-size: 2em;
-    margin: 1rem 5px;
-}
-
-.network .fab:hover {
-    color: #18bc9c;
-}
-
-.contact {
-    width: 100%;
+.contact-footer {
     display: flex;
-    justify-content: center;
-}
-
-.contact .phone-email {
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 4rem;
-}
-
-.contact .network {
-    margin-left: 4rem;
-}
-
-.phone-email .fas,
-.phone-email .far {
-    font-size: 1.3em;
-    margin-right: 5px;
-}
-
-footer p {
-    font-size: 18px;
-    margin-top: 1.5rem;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
 }
 
 footer a {
-    color: #fff;
+    color: white;
 }
 
-footer a:hover {
+.footer-email a:hover,
+.footer-phone a:hover {
     color: #18bc9c;
     text-decoration: none;
+}
+
+.network h6 {
+    color: white;
+}
+
+.fa-facebook,
+.fa-instagram {
+    font-size: 1.5em;
+    margin: 6px;
+}
+
+.fa-facebook {
+    margin-left: 0;
+}
+
+.copyright {
+    text-align: center;
+    color: white;
+}
+
+@media all and (max-width: 668px) {
+    footer {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+
+    .contact-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .network {
+        margin-top: 1rem;
+    }
+
+    .copyright {
+        width: 100%;
+    }
 }

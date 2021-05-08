@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('article_index') }}">Le club</a>
+                <a class="nav-link" href="{{ path('club_index') }}">Le club</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
@@ -32,6 +32,9 @@
                 <a class="nav-link" href="{{ path('calendar_event_index') }}">Agenda / Horaire</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ path('article_index') }}">Articles</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ path('contact') }}">Contact</a>
             </li>
             {% if is_granted('ROLE_ADMIN') %}
@@ -41,6 +44,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ path('admin_article_index') }}">Gestion des articles</a>
                         <a class="dropdown-item" href="{{ path('admin_file_index') }}">Gestion des fichiers</a>
+                        <a class="dropdown-item" href="{{ path('admin_category_index') }}">Gestion des categories</a>
                         <a class="dropdown-item" href="{{ path('admin_calendar_event_index') }}">Gestion des cours</a>
                         <a class="dropdown-item" href="{{ path('admin_user_index') }}">Gestion des utilisateurs</a>
                         <a class="dropdown-item" href="{{ path('admin_contact_index') }}">Gestion du contact</a>

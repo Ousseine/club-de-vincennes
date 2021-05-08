@@ -14,6 +14,7 @@ class FileType extends AbstractType
     {
         $builder
             ->add('title')
+            ->add('category')
             ->add('image', \Symfony\Component\Form\Extension\Core\Type\FileType::class, [
                'mapped' => false
             ])
