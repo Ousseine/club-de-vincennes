@@ -1,24 +1,14 @@
-.fc-daygrid-day-frame {
-    width: 100%;
-    height: 100%;
+.fc-daygrid-day-top a {
+    color: black;
 }
 
-.fc-daygrid-event {
-    width: 100%;
-    height: 100%;
-    padding: 2rem 0;
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.2em;
+.fc-button-group {
+    display: none;
 }
 
-.fc-daygrid-event-dot {
-    width: 90%;
-    margin: auto;
-    position: relative;
-    top: -20px;
+@media all and (max-width: 668px) {
+    #calendar .fc-dayGridMonth-button,
+    #calendar .fc-dayGridWeek-button {
+        display: none!important;
+    }
 }

@@ -14,23 +14,20 @@ table tr > th {
     color: black;
 }
 
+/*------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------*/
 
+/*----------------------------------form --------------------------------------------*/
 
-/* -------------- form ---------------------*/
-
-.form {
-    margin-bottom: 1rem;
-    background-color: red;
-    border-right: 5px;
-    padding: 1rem 2rem;
-    border-radius: 5px;
+.form-title {
+    text-align: center;
 }
 
-.form-agenda {
-    margin-bottom: 1rem;
+.form {
+    width: 60%;
+    margin: 10px auto;
+    padding: 0 1rem;
     background-color: red;
-    border-right: 5px;
-    padding: 1rem 2rem;
     border-radius: 5px;
 }
 
@@ -51,12 +48,18 @@ table tr > th {
 .label-street,
 .label-city,
 .label-country,
-.label-postal-code {
+.label-postal-code,
+.checkbox {
     color: white;
     margin-top: 1rem;
 }
 
-.form-chek {
+#calendar_event_description,
+#article_content {
+    height: 200px;
+}
+
+.form-group {
     margin: 1rem 0;
 }
 
@@ -64,9 +67,8 @@ table tr > th {
     color: white;
 }
 
-#calendar_event_description,
-#article_content {
-    height: 200px;
+.btn-return {
+    margin: 0 13.5rem;
 }
 
 /*------------------------------------------------------------------------------*/
@@ -118,7 +120,7 @@ table tr > th {
     margin-left: 0.5rem;
 }
 
-/* ------------------------------------------------ admin agenda ----------------------------------------------*/
+/* ------------------------------------------------ admin calendar ----------------------------------------------*/
 
 .actions {
     display: flex!important;
@@ -222,4 +224,76 @@ tr {
 .user-file .user-item {
     width: 100%;
     margin-right: .5rem;
+}
+
+
+
+
+/*---------------------------- responsive -------------------------------*/
+/*-----------------------------------------------------------------------*/
+/*---------------------------- responsive -------------------------------*/
+
+@media all and (max-width: 668px) {
+    .contain {
+        width: 100%;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .form-title {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    /*----------------- form ---------------------*/
+    .form {
+        width: 100%;
+    }
+
+    .btn-return {
+        margin: 0;
+    }
+
+    #calendar_event_description,
+    #article_content {
+        height: 100px;
+    }
+
+    .form-contact-item,
+    .form-calendar-item {
+        flex-direction: column;
+    }
+
+    .colors {
+        flex-direction: row;
+    }
+
+    .form-contact-item .phone,
+    .form-contact-item .street,
+    .form-contact-item .city,
+    .form-contact-item .email,
+    .form-contact-item .postalCode,
+    .form-contact-item .country,
+    .dates .start,
+    .colors .text-color,
+    .dates .end,
+    .user-item {
+        margin: 0;
+    }
+
+    .file-item {
+        margin-left: 0!important;
+    }
+
+    #calendar_event_startAt_date,
+    #calendar_event_endAt_date {
+        margin-bottom: 10px;
+    }
+
+    .user-file {
+        flex-direction: column;
+    }
 }

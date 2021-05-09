@@ -1,12 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
 {% block css %}
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 {% endblock %}
 
-{% block title %}Article{% endblock %}
+{% block title %}Gestion des articles - Article{% endblock %}
 
 {% block body %}
+    <h1 class="form-title">Articles</h1>
+
     {% for article in articles %}
         <div class="admin-article">
             <div class="admin-title-article">

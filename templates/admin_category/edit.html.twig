@@ -7,11 +7,9 @@
 {% block title %}Gestion des catégories - Modifier une catégorie{% endblock %}
 
 {% block body %}
-    <h1>Modifier une catégorie</h1>
+    <h1 class="form-title">Modifier une catégorie</h1>
 
     {{ include('admin_category/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-    <button class="btn btn-primary"><a href="{{ path('admin_category_index') }}">Retour</a></button>
-
-    {{ include('admin_category/_delete_form.html.twig') }}
+    <button class="btn btn-return btn-primary"><a href="{{ path('admin_category_index') }}">Retour</a></button>
 {% endblock %}

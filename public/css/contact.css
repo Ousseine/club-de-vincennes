@@ -59,3 +59,21 @@
     text-decoration: none;
     color: lightgrey;
 }
+
+@media all and (max-width: 668px) {
+    .contact {
+        grid-template-columns: auto;
+    }
+
+    .image-contact {
+        display: none;
+    }
+
+    .contact-body {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 1rem 0;
+        font-size: 1.2em;
+    }
+}

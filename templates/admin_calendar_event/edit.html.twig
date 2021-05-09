@@ -7,11 +7,9 @@
 {% block title %}Gestion du calendrier - Modifier un évènement{% endblock %}
 
 {% block body %}
-    <h1>Modifier un évènement</h1>
+    <h1 class="form-title">Modifier un évènement</h1>
 
     {{ include('admin_calendar_event/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-    <button class="btn btn-primary"><a href="{{ path('admin_calendar_event_index') }}">Retour</a></button>
-
-    {{ include('admin_calendar_event/_delete_form.html.twig') }}
+    <button class="btn btn-return btn-primary"><a href="{{ path('admin_calendar_event_index') }}">Retour</a></button>
 {% endblock %}

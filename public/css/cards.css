@@ -1,5 +1,5 @@
 .card {
-    margin: 3rem 0;
+    margin: 2rem 0;
     border: none;
 }
 
@@ -21,4 +21,15 @@
 .content {
     font-size: 22px;
     margin-top: 2rem;
+}
+
+@media all and (max-width: 668px) {
+    card {
+        margin: 2rem 0;
+    }
+
+    .content {
+        font-size: 17px;
+        margin-top: 1rem;
+    }
 }

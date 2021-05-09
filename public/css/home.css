@@ -9,17 +9,6 @@ main p {
     font-size: 20px;
 }
 
-.title-card {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 1.6em;
-    text-transform: uppercase;
-    border-radius: 5px;
-    margin: 2rem 0;
-}
-
 .card-row img {
     border-radius: 5px;
 }
@@ -67,8 +56,22 @@ main p {
     margin: 20px 0;
 }
 
-@media all {
+@media all and (max-width: 668px) {
     .item-taekwonkido {
+        margin-top: 2rem;
+    }
+
+    .big-teacher-img {
+        float: none;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    main p {
+        font-size: 17px!important;
+    }
+
+    .carousel {
         margin-top: 2rem;
     }
 }

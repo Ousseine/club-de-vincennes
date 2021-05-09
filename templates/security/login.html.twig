@@ -1,24 +1,24 @@
 {% extends 'base-admin.html.twig' %}
 
 {% block css %}
-    <link rel="stylesheet" href="{{ asset('css/security.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}" />
 {% endblock %}
 
 {% block title %}Se connecter{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ error.messageKey|trans(error.messageData, 'security') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    {% endif %}
+    <h1 class="form-title">Identifiez-vous</h1>
 
-    <h1 class="h3 mb-3 font-weight-normal">Identifiez-vous</h1>
-    <div class="form-security">
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-light alert-dismissible fade show" role="alert">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+
         <label for="inputEmail" class="label-email">Adresse e-mail</label>
         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
         <label for="inputPassword" class="label-password mt-2">Mot de passe</label>
@@ -26,11 +26,14 @@
 
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-        <div class="checkbox mb-3">
-            <label class="label-checkbox"><input type="checkbox" name="_remember_me" class="mr-2 mt-3">Reste connectez</label>
+        <div class="checkbox">
+            <label class="label-checkbox">
+                <input type="checkbox" name="_remember_me">&nbsp;Rester connectez
+            </label>
         </div>
 
-        <button class="btn btn-lg btn-primary" type="submit">Identifiez</button>
-    </div>
-</form>
+        <button class="btn btn-lg btn-success" type="submit">Se connecter</button>
+    </form>
+
+    <p class="create-account">Vous n' avez pas de compte ? <a href="{{ path('app_register') }}">Créer un compte</a></p>
 {% endblock %}

@@ -1,0 +1,66 @@
+.form-title {
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: 10px auto;
+    padding: 0 1rem 1rem 1rem;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.label-title,
+.label-file,
+.label-category,
+.label-user,
+.label-content,
+.label-name,
+.label-email,
+.label-password,
+.label-description,
+.label-start,
+.label-end,
+.label-background,
+.label-color,
+.label-phone,
+.label-street,
+.label-city,
+.label-country,
+.label-postal-code,
+.checkbox {
+    color: white;
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin: 1rem 0;
+}
+
+.form-check-label {
+    color: white;
+}
+
+.create-account,
+.login-identity {
+    width: 50%;
+    margin: 0.6rem auto;
+}
+
+.create-account a,
+.login-identity a {
+    color: red;
+}
+
+/* form responsive */
+
+@media all and (max-width: 668px) {
+    form {
+        width: 100%;
+    }
+
+    .create-account,
+    .login-identity {
+        width: 100%;
+    }
+}

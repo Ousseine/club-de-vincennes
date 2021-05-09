@@ -13,20 +13,30 @@
 
 {% block js %}
     <script>
-        window.onload = ()=> {
+        window.onload = () => {
             let calendarElt = document.querySelector("#calendar");
 
             let calendar = new FullCalendar.Calendar(calendarElt, {
-                initialView: 'timeGridWeek',
+                initialView: 'dayGridMonth',
                 locale:'fr',
                 timeZone:'Europe/Paris',
                 headerToolbar: {
-                    start: 'prev,next today',
-                    center: 'title',
-                    end: 'dayGridMonth,timeGridWeek'
+                    start: 'title',
+                    end: 'prev,next today,dayGridMonth,dayGridWeek'
                 },
                 // affichage des évènements
-                events: {{data|raw}}
+                events: {{data|raw}},
+
+                eventTimeFormat: { // like '14:30'
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false
+                },
+
+                // option
+                height: 600,
+                expandRows: true,
+                themeSystem: 'bootstrap'
             });
 
             calendar.render();

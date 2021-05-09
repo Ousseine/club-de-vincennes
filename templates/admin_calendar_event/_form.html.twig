@@ -1,6 +1,6 @@
 <div class="form form-agenda">
     {{ form_start(form) }}
-        <div class="title-description">
+        <div class="form-calendar-item title-description">
             {{ form_label(form.title, 'Titre', {
                 'label_attr': {'class': 'label-title'}
             }) }}
@@ -14,7 +14,7 @@
             }) }}
         </div>
 
-        <div class="dates">
+        <div class="form-calendar-item dates">
             <div class="start">
                 {{ form_label(form.startAt, 'Date debut', {
                     'label_attr': {'class': 'label-start'}
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="colors">
+        <div class="form-calendar-item colors">
             <div class="background-color">
                 {{ form_label(form.backgroundColor, 'Couleur du fond', {
                     'label_attr': {'class': 'label-background'}

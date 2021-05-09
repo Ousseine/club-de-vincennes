@@ -7,9 +7,9 @@
 {% block title %}Gestion des utilisateurs - Ajouter un utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Ajouter un utilisateur</h1>
+    <h1 class="form-title">Ajouter un utilisateur</h1>
 
     {{ include('admin_user/_form.html.twig') }}
 
-    <button class="btn btn-primary"><a href="{{ path('admin_user_index') }}">Retour</a></button>
+    <button class="btn btn-return btn-primary"><a href="{{ path('admin_user_index') }}">Retour</a></button>
 {% endblock %}

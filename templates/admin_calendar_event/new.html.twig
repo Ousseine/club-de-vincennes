@@ -4,12 +4,12 @@
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 {% endblock %}
 
-{% block title %}Admin - Ajouter un nouveau évènement{% endblock %}
+{% block title %}Gestion du calendrier - Ajouter un nouveau évènement{% endblock %}
 
 {% block body %}
-    <h1>Ajouter un nouveau évènement</h1>
+    <h1 class="form-title">Ajouter un nouveau évènement</h1>
 
     {{ include('admin_calendar_event/_form.html.twig') }}
 
-    <button class="btn btn-primary"><a href="{{ path('admin_calendar_event_index') }}">Retour</a></button>
+    <button class="btn btn-return btn-primary"><a href="{{ path('admin_calendar_event_index') }}">Retour</a></button>
 {% endblock %}
