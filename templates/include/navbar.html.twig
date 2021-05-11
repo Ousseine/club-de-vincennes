@@ -43,11 +43,10 @@
                        aria-haspopup="true" aria-expanded="false">Gestion de l' administrateur</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ path('admin_article_index') }}">Gestion des articles</a>
-                        <a class="dropdown-item" href="{{ path('admin_file_index') }}">Gestion des fichiers</a>
                         <a class="dropdown-item" href="{{ path('admin_category_index') }}">Gestion des categories</a>
-                        <a class="dropdown-item" href="{{ path('admin_calendar_event_index') }}">Gestion des cours</a>
-                        <a class="dropdown-item" href="{{ path('admin_user_index') }}">Gestion des utilisateurs</a>
+                        <a class="dropdown-item" href="{{ path('admin_calendar_event_index') }}">Gestion de l' agenda</a>
                         <a class="dropdown-item" href="{{ path('admin_contact_index') }}">Gestion du contact</a>
+                        <a class="dropdown-item" href="{{ path('admin_user_index') }}">Gestion des utilisateurs</a>
                     </div>
                 </li>
             {% endif %}

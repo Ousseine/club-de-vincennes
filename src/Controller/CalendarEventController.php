@@ -21,8 +21,8 @@ class CalendarEventController extends AbstractController
       foreach($events as $event){
          $evenements[] = [
             'id' => $event->getId(),
-            'start' => $event->getStartAt()->format('Y-m-d H:i:s'),
-            'end' => $event->getEndAt()->format('Y-m-d H:i:s'),
+            'start' => $event->getStartAt()->format('d-m-Y H:i'),
+            'end' => $event->getEndAt()->format('d-m-Y H:i'),
             'title' => $event->getTitle(),
             'description' => $event->getDescription(),
             'backgroundColor' => $event->getBackgroundColor(),
